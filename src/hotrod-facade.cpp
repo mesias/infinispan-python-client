@@ -82,21 +82,12 @@ void Configuration::socketTimeout(int socketTimeout) {
     this->builder->socketTimeout(socketTimeout);
 }
 
-    /**
-     * Configures underlying TCP connection timeout. Default is 60000 msec
-     *
-     *\return ConfigurationBuilder instance to be used for configuration
-     */
-void Configuration::connectionTimeout(int connectTimeout) {
-    this->builder->connectionTimeout(connectTimeout);
-}
-
-    /**
+/**
      * Sets the protocol version to use. Default is "1.1".
      *
      *\return ConfigurationBuilder instance to be used for further configuration
      */
-void Configuration::setProtocol(std::string protocol) {
+void Configuration::protocolVersion(std::string protocol) {
     this->builder->protocolVersion(protocol);
 }
 
