@@ -68,7 +68,7 @@ void Configuration::addServer(std::string host, unsigned short port) {
      *
      *\return ConfigurationBuilder instance to be used for further configuration
      */
-void Configuration::setMaxRetries(int maxRetries) {
+void Configuration::maxRetries(int maxRetries) {
     this->builder->maxRetries(maxRetries);
 }
 
@@ -87,8 +87,8 @@ void Configuration::socketTimeout(int socketTimeout) {
      *
      *\return ConfigurationBuilder instance to be used for configuration
      */
-void Configuration::connectTimeout(int connectTimeout) {
-    this->builder->connectTimeout(connectTimeout);
+void Configuration::connectionTimeout(int connectTimeout) {
+    this->builder->connectionTimeout(connectTimeout);
 }
 
     /**
