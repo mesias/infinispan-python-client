@@ -16,4 +16,5 @@
 %pointer_functions(std::vector<unsigned char>, pvuc);
 %template(UCharVector) std::vector<unsigned char>;
 %template(UCharVectorVector) std::vector<std::vector<unsigned char> >; 
+%feature("director") Infinispan::Configuration;
 %include "hotrod-facade.h"

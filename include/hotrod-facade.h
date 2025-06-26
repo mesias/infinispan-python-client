@@ -20,9 +20,9 @@ class Configuration {
 public:
     Configuration();
     void addServer(std::string host, unsigned short post);
-    void maxRetries(int maxRetries);
-    void socketTimeout(int socketTimeout);
-    void connectionTimeout(int connectionTimeout);
+    void maxRetries(int);
+    void socketTimeout(int);
+    void connectionTimeout(int);
     void setProtocol(std::string);
     void build();
     void setSasl(std::string mechanism, std::string serverFQDN, std::string user, std::string password);
