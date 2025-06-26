@@ -68,7 +68,7 @@ void Configuration::addServer(std::string host, unsigned short port) {
      *
      *\return ConfigurationBuilder instance to be used for further configuration
      */
-void Configuration::maxRetries(int maxRetries) {
+void Infinispan::Configuration::maxRetries(int maxRetries) {
     this->builder->maxRetries(maxRetries);
 }
 
@@ -78,20 +78,29 @@ void Configuration::maxRetries(int maxRetries) {
     *
     *\return ConfigurationBuilder instance to be used for further configuration
     */
-void Configuration::socketTimeout(int socketTimeout) {
+void Infinispan::Configuration::socketTimeout(int socketTimeout) {
     this->builder->socketTimeout(socketTimeout);
 }
 
-/**
+    /**
+     * Configures underlying TCP connection timeout. Default is 60000 msec
+     *
+     *\return ConfigurationBuilder instance to be used for configuration
+     */
+void Infinispan::Configuration::connectionTimeout(int connectTimeout) {
+    this->builder->connectionTimeout(connectTimeout);
+}
+
+    /**
      * Sets the protocol version to use. Default is "1.1".
      *
      *\return ConfigurationBuilder instance to be used for further configuration
      */
-void Configuration::protocolVersion(std::string protocol) {
+void Infinispan::Configuration::setProtocol(std::string protocol) {
     this->builder->protocolVersion(protocol);
 }
 
-void Configuration::setSasl(std::string mechanism, std::string serverFQDN, std::string user, std::string password) {
+void Infinispan::Configuration::setSasl(std::string mechanism, std::string serverFQDN, std::string user, std::string password) {
 	// BEWARE this implementation copies user and password in memory
         userCpy = user;
         passwordCpy = password;
