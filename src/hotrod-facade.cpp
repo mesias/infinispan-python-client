@@ -62,6 +62,40 @@ void Configuration::addServer(std::string host, unsigned short port) {
     this->builder->addServer().host(host).port(port);
 }
 
+    /**
+     * Sets the maximum number of retries for each request. A valid value should be greater or equals than 0 (zero).
+     * Zero means no retry will made in case of a network failure. It defaults to 10.
+     *
+     *\return ConfigurationBuilder instance to be used for further configuration
+     */
+void Configuration::setMaxRetries(int maxRetries) {
+    this->builder->maxRetries(maxRetries);
+}
+
+    /**
+    * Sets the socket timeout for the underlying connections in this ConfigurationBuilder.
+    * Default is 60000 msec.
+    *
+    *\return ConfigurationBuilder instance to be used for further configuration
+    */
+void Configuration::socketTimeout(int socketTimeout) {
+    this->builder->socketTimeout(socketTimeout);
+}
+
+    /**
+     * Configures underlying TCP connection timeout. Default is 60000 msec
+     *
+     *\return ConfigurationBuilder instance to be used for configuration
+     */
+void Configuration::connectTimeout(int connectTimeout) {
+    this->builder->connectTimeout(connectTimeout);
+}
+
+    /**
+     * Sets the protocol version to use. Default is "1.1".
+     *
+     *\return ConfigurationBuilder instance to be used for further configuration
+     */
 void Configuration::setProtocol(std::string protocol) {
     this->builder->protocolVersion(protocol);
 }

@@ -34,7 +34,7 @@ swig_link_libraries (Infinispan hotrod ${PYTHON_LIBRARIES})
 
 include(ExternalProject)
 ExternalProject_Add(cppclient
-  GIT_REPOSITORY    https://github.com/infinispan/cpp-client.git
+  GIT_REPOSITORY    https://github.com/mesias/infinispan-cpp-client.git
   GIT_TAG origin/main
   BUILD_COMMAND make hotrod 
   INSTALL_COMMAND ""
